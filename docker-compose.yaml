@@ -83,7 +83,7 @@ x-airflow-common:
     - /home/ubuntu/config:/opt/airflow/config
     - /home/ubuntu/airflow_2.9.1/plugins:/opt/airflow/plugins
     - /home/ubuntu/ingest:/opt/airflow/ingest
-  user: "${AIRFLOW_UID:-50000}:0"
+  user: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.9.1}
   depends_on:
     &airflow-common-depends-on
     redis:
